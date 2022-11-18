@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NixAutos-Classificados</title>
+
+	<!-- JQUERY -->
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+    <!-- Fontawesome CSS -->
+    <script src="https://kit.fontawesome.com/a69cec9c91.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="fontawesome/css/all.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" type="text/css" href="css/area-anunciante-estilo.css">
+
+    <!-- Jquery Scripts Header.JS -->
+
+
+    <script type="text/javascript" src="js/header.js"></script>
+   
+
+</head>
+<body>
+	<!--Container -->
+	<div id="container">
+		<!-- Header - CAbecalho -->
+		<div id="header">
+
+			<!--Barra Superior -->
+			<div id="barra-superior">
+
+
+				<!-- Botão Menu -->
+					<span class="menu" id="menu">
+		                <div class="btn bg-white fa fa-bars rounded p-1  ml-1" ><span class="mx-1" id="btn-menu-bar">Menu<span></div>
+
+		            </span>
+
+
+		            <!-- LOGO DA NIX AUTOS -->
+		          	<span id="logo-nixautos">
+		              	<img src="img/logo-ficticia.png" alt="Logo da Nix Autos" class=" img-fluid">
+		          	</span>
+
+
+		          	<!-- NOTIFICACAO DE LEADS -->
+			          <a href="" id="icone-novos-leads" class="btn btn-warning text-center p-1">
+			              <small>1000</small>
+			              <i class="fa fa-envelope" aria-hidden="true"></i>
+			          </a>
+
+				
+			</div>
+			<!--Final Barra Superior -->
+
+			
+	          <!-- MENU HIDDEN -->
+	          	<div id="menu-hidden">
+	          		<div id="menu-bar" class="p-1">
+	          			<div class="text-center p-3 mx-1 my-1 border rounded btn-menu">Criar Anuúncio</div>
+	          			<div class=" text-center p-3 mx-1 my-1 border rounded btn-menu">Leads Recebidos</div>
+	          			<div class=" text-center p-3 mx-1 my-1 border rounded btn-menu">Estatísticas</div>
+	          			<div class=" text-center p-3 mx-1 my-1 border rounded btn-menu">Perfil</div>
+	          			<div class="text-center p-3 mx-1 my-1 border rounded btn-menu">Suporte Técnico</div>
+	          			<div class=" text-center p-3 mx-1 my-1 border rounded btn-menu">Sair</div>
+		          		
+	          		</div>
+	          		
+
+		          		
+	          		</div>
+	          	</div>
+	          	 <!-- FINAL  MENU HIDDEN -->
+
+
+
+
+	    <!--  FINAL HEADER -->
+		</div>
+
+		<!-- Field Select do Tipo do Anuncio -->
+        <div  id="campo-escolha-tipo-anuncio">
+                <label id="escolha-tipo-veiculo" class=" bg-warning  rounded">Escolha tipo veículo *</label>
+
+                <select name="tipo-veiculo" id="tipo-veiculo" class="form-control " >
+                    <option value="escolha">Escolha Tipo</option>
+                    <option value="carros" >Carro</option>
+                    <option value="motos">Moto</option>
+                    <option value="caminhoes">Caminhão</option>
+                </select>
+
+
+
+                <div class="m-1" id="aviso-campos-obrigatorio"><small>* Campos  obrigatórios</small></div>
+        </div>
+
+
+        <!-- JavaScripts do select do tipo anuncio -->
+        <script type="text/javascript" src="js/escolha-tipos-veiculos.js"></script>
+
+
+        <!-- Container do Formulário -->
+        <div id="container-formulario">
+
+        	<!-- FORMULARIO DE CADASTRO DE ANUNCIO -->
+        	<div id="formulario">
+
+        		<!-- FORM -->
+        		<form enctype="multipart/form-data" method="POST" id="formulario" class=" border border-dark rounded p-0 form  " >
+        			{% csrf_token %}
+        			 <div class=" p-0 m-0">
+                    	<h5 class="  text-center text-nowrap" id="header-formulario">FORMULÁRIO<span class="px-2 " id="variavel-tipo-veiculo"></span></h5>
+                    	<hr class="mx-0 mt-0 mb-1 p-0">
+                	</div>
+
+                	<!-- CORPO DO FORMULÁRIO -->
+                	<div id="corpo-formulario">
+                		<!-- CAMPO MARCA -->
+		                <div class="mx-2" id="campo-marca" >
+		                    <label class="bg-warning px-3 border rounded etiqueta">Marca *</label>
+		                    <select class="form-control" id="Marca" name="marca">
+		                        <option>Marca</option>
+		                    </select>
+		                    <input name="field-marca" id="field-marca" hidden  >
+		                    <br>
+		                </div>
+
+		                <!-- CAMPO MODELO -->
+
+		                <div class="mx-2" id="campo-modelo">
+		                     <label class="bg-warning px-3 border rounded  etiqueta">Modelo *</label>
+		                    <select class="form-control" id="Modelo" name="modelo">
+		                        <option>Modelo</option>
+		                    </select>
+		                    <input id="field-modelo" name="field-modelo" hidden >
+		                    <br>
+		                </div>
+
+
+		                 <!-- CAMPO ANO -->
+		                <div class="mx-2" id="campo-ano">
+		                     <label class="bg-warning px-3 border rounded  etiqueta">Ano *</label>
+		                    <select class="form-control" id="Ano" name="ano">
+		                        <option>Ano</option>
+		                    </select>
+		                     <input id="field-ano" name="field-ano" hidden >
+		                    <br>
+		                </div>
+
+
+		                 <!-- CAMPO COMBUSTIVEL -->
+		                <div class="mx-2" id="campo-combustivel">
+		                    <label  class="bg-warning px-3 border rounded  etiqueta">Combustível</label>
+		                    <select class="form-control " id="Combustivel" name="combustivel">
+		                         <option>Combustível</option>
+		                         <option value="gasolina">GASOLINA</option>
+		                         <option value="etanol">ETANOL</option>
+		                         <option value="diesel">DIESEL</option>
+		                          <option value="flex">FLEX</option>
+		                          <option value="eletrico">ELÉTRICO</option>
+		                          <option value="híbrido">HÍBRIDO</option>
+		                          <option value="gnv">GNV</option>
+		                     </select>
+
+		                    <br>
+		                </div>
+
+		                     <!-- CAMPO COR -->
+				        <div class="mx-2" id="campo-cor">
+				            <label  class="bg-warning px-3 border rounded  etiqueta">Cor</label>
+				            <select class="form-control " id="Cor" name="cor">
+				                <option>Selecionar Cor</option>
+				                 {% for cores in cores %}
+				                 <option value="{{cores.nome_cor}}" id="{{cores.id}}">{{cores.nome_cor}}</option>
+				                 {% endfor %}
+				            </select>
+
+				            <br>
+				        </div>
+
+				         <!-- CAMPO PORTAS -->
+			             <div id="campo-portas" class="mx-2">
+			                 <label  class="bg-warning px-3 border rounded  etiqueta">Portas</label>
+			                 <select class="form-control " id="portas" name="portas">
+			                     <option>Portas</option>
+			                     <option value="2 Portas">2 PORTAS</option>
+			                     <option value="3 Portas">3 PORTAS</option>
+			                     <option value="4 Portas">4 PORTAS</option>
+			                      <option value="5 Portas">5 PORTAS</option>
+			                      <option value="6 Portas">6 PORTAS</option>
+			                 </select>
+			                  <br>
+			             </div>
+
+			                <!-- CAMPO CAMBIO -->
+		                 <div id="campo-cambio" class="mx-2">
+		                     <label  class="bg-warning px-3 border rounded  etiqueta">Câmbio</label>
+		                     <select class="form-control" id="cambio" name="cambio">
+		                         <option>CÂMBIO</option>
+		                         <option value="MANUAL">MANUAL</option>
+		                         <option value="AUTOMÁTICO">AUTOMÁTICO</option>
+		                         <option value="AUTOMÁTIZADO">AUTOMÁTZADO</option>
+
+		                     </select>
+		                     <br>
+		                 </div>
+
+
+
+			              <!-- CAMPO IPVA -->
+			             <div id="campo-ipva" class="mx-2">
+			                 <label  class="bg-warning px-3 border rounded  etiqueta">IPVA</label>
+			                 <select class="form-control " id="ipva" name="ipva">
+			                     <option value="ipva pago">SIM</option>
+			                     <option value="ipva nao pago">NÃO</option>
+
+			                 </select>
+			                 <br>
+			             </div>
+
+
+                     	<!-- CAMPO PLACA -->
+			             <div id='campo-placa' class="mx-2">
+			                <label  class="bg-warning px-3 border rounded  etiqueta">Placa</label>
+			                <input type="text" maxlength="7" name="placa" id="placa" class="form-control " placeholder="ABC - 1B34"  onkeyup="validaPlaca();" >
+			                <span id="validacao"></span>
+			                <span class="" id="validacao-2"></span>
+			                  <br>
+			             </div>
+
+
+
+                		<!-- FINAL DO BODY DO FORMULÁRIO -->
+                	</div>
+        		</form>
+        		
+
+        		
+        		
+        
+
+
+
+	
+	</div>
+
+</body>
+</html>
